@@ -3,3 +3,5 @@ const createCounter = function (n: number): () => number {
         return n++
     }
 }
+
+export {}

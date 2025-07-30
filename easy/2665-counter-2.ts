@@ -18,3 +18,5 @@ function createCounter(init: number): Counter {
         }
     } as Counter
 }
+
+export {}
