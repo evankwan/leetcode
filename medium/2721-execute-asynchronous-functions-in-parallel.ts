@@ -2,7 +2,7 @@ type Fn<T> = () => Promise<T>
 
 function promiseAll<T>(functions: Fn<T>[]): Promise<T[]> {
     return new Promise(function(res, rej) {
-        const results = []
+        const results: T[] = []
         let completed = 0
 
         if (functions.length === 0) {
