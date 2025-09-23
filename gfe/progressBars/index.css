@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .progressBar {
+    height: 8px;
+    width: 100%;
+    border-radius: 9999px;
+    border: 1px solid #333;
+    overflow: hidden;
+  }
+  
+  .progressBarFill {
+    height: 8px;
+    width: 0%;
+    background-color: lightgreen;
+    transition: width 2s ease-out;
+  }
+  
+  .progressBarFillFull {
+    width: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    margin: 16px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+  
