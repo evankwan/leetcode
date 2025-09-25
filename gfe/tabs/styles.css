@@ -1,17 +1,17 @@
 body {
-    font-family: sans-serif;
-  }
-  
-  .active-tab {
-    color: blue;
-  }
-  
-  .tab-content {
-    display: none;
-    visibility: hidden;
-  }
-  
-  .tab-content--active {
-    display: block;
-    visibility: visible;
-  }
+  font-family: sans-serif;
+}
+
+.active-tab {
+  color: blue;
+}
+
+.tab-content {
+  display: none;
+  visibility: hidden;
+}
+
+.tab-content--active {
+  display: block;
+  visibility: visible;
+}

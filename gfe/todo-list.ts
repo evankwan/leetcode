@@ -36,17 +36,17 @@ app.handleSubmit = () => {
 };
 
 app.createElement = (tagName, text, appendTo) => {
-  const el = document.createElement(tagName)
-  el.innerText = `${text} `
-  appendTo.appendChild(el)
-  return el
-}
+  const el = document.createElement(tagName);
+  el.innerText = `${text} `;
+  appendTo.appendChild(el);
+  return el;
+};
 
 app.createListItem = (text) => {
   const listItem = document.createElement("li");
 
-  app.createElement("span", text, listItem)
-  const deleteButton = app.createElement("button", "Delete", listItem)
+  app.createElement("span", text, listItem);
+  const deleteButton = app.createElement("button", "Delete", listItem);
   deleteButton.addEventListener("click", app.deleteTodo);
 
   app.selectors.list.appendChild(listItem);

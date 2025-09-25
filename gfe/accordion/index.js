@@ -61,7 +61,7 @@ const app = {
   handleAccordianClick: function (e, section) {
     e.preventDefault();
 
-    console.log(this.state.openState[section])
+    console.log(this.state.openState[section]);
     if (this.state.openState[section]) {
       this.closeSection(section);
     } else {
@@ -70,13 +70,19 @@ const app = {
   },
   closeSection: function (section) {
     this.state.openState[section] = false;
-    this.selectors[CONFIG[section].SECTION].classList.remove("accordian-section--open");
-    this.selectors[CONFIG[section].CARET].classList.remove("accordian-icon--open")
+    this.selectors[CONFIG[section].SECTION].classList.remove(
+      "accordian-section--open",
+    );
+    this.selectors[CONFIG[section].CARET].classList.remove(
+      "accordian-icon--open",
+    );
   },
   openSection: function (section) {
     this.state.openState[section] = true;
-    this.selectors[CONFIG[section].SECTION].classList.add("accordian-section--open");
-    this.selectors[CONFIG[section].CARET].classList.add("accordian-icon--open")
+    this.selectors[CONFIG[section].SECTION].classList.add(
+      "accordian-section--open",
+    );
+    this.selectors[CONFIG[section].CARET].classList.add("accordian-icon--open");
   },
 };
 

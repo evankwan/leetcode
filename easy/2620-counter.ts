@@ -1,7 +1,7 @@
 const createCounter = function (n: number): () => number {
-    return function() {
-        return n++
-    }
-}
+  return function () {
+    return n++;
+  };
+};
 
-export {}
+export {};
