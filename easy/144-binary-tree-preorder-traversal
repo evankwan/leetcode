@@ -1,40 +1,16 @@
-class TreeNode {
-	val: number;
-	left: TreeNode | null;
-	right: TreeNode | null;
-	constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-		this.val = val === undefined ? 0 : val;
-		this.left = left === undefined ? null : left;
-		this.right = right === undefined ? null : right;
-	}
-}
-
-function traverse(root: TreeNode | null, res: number[]): number[] {
+function preorderTraverse(root: TreeNode | null, res: number[]): number[] {
 	res.push(root!.val);
-	let withLeft = root?.left ? traverse(root.left, res) : res;
-	let withRight = root?.right ? traverse(root.right, withLeft) : withLeft;
+	const withLeft = root?.left ? preorderTraverse(root.left, res) : res;
+	const withRight = root?.right
+		? preorderTraverse(root.right, withLeft)
+		: withLeft;
 	return withRight;
 }
 
 function preorderTraversal(root: TreeNode | null): number[] {
-	// init results array
-	let res: number[] = [];
-
-	if (root?.val || root?.val === 0) {
-		res.push(root.val);
+	if (!root?.val && root?.val !== 0) {
+		return [];
 	}
 
-	// check if the root has a left and right
-	if (root?.left) {
-		// if there is a left, add it to the results array and recursively call the function
-		res = traverse(root.left, res);
-	}
-
-	if (root?.right) {
-		// if there is a right, add it to the results array and recursively call the function
-		res = traverse(root.right, res);
-	}
-
-	// return results array
-	return res;
+	return preorderTraverse(root, []);
 }
